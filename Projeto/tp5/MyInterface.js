@@ -49,7 +49,7 @@ MyInterface.prototype.init = function(application) {
 	
 	// add a slider
 	// must be a numeric variable of the scene, initialized in scene.init e.g.
-	 this.speed=3;
+	// this.speed=3;
 	// min and max values can be specified as parameters
 	
 	this.gui.add(this.scene, 'speed', -5, 5);
@@ -71,22 +71,22 @@ MyInterface.prototype.processKeyboard = function(event) {
 	// for better cross-browser support, you may also check suggestions on using event.which in http://www.w3schools.com/jsref/event_key_keycode.asp
 	switch (event.keyCode)
 	{
-		case (97):
-			this.scene.drone.rotate(this.scene.speed * 4);
+		case (97): //a
+			this.scene.drone.rotate(this.scene.speed*60);
 			break;
-		case(115):
-			this.scene.drone.move(-this.scene.speed  *0.05*   Math.sin(this.scene.drone.rot_ang * degToRad),0, -this.scene.speed *0.05 *  Math.cos(this.scene.drone.rot_ang * degToRad));
+		case(115): //s
+			this.scene.drone.move(-this.scene.speed  *0.1*   Math.sin(this.scene.drone.rot_ang * degToRad),0, -this.scene.speed *0.05 *  Math.cos(this.scene.drone.rot_ang * degToRad));
 			break;
-		case (100):
-			this.scene.drone.rotate(-this.scene.speed *4);
+		case (100): //d
+			this.scene.drone.rotate(-this.scene.speed *60);
 			break;
-		case (119):
-			this.scene.drone.move(this.scene.speed *0.05 * Math.sin(this.scene.drone.rot_ang * degToRad),0,this.scene.speed *0.05 * Math.cos(this.scene.drone.rot_ang * degToRad));
+		case (119): //w
+			this.scene.drone.move(this.scene.speed *0.1 * Math.sin(this.scene.drone.rot_ang * degToRad),0,this.scene.speed *0.05 * Math.cos(this.scene.drone.rot_ang * degToRad));
 			break;
-		case (105):
+		case (105): //i
 			this.scene.drone.move(0,0.1, 0);
 			break;
-		case (106):
+		case (106): //j
 			this.scene.drone.move(0,-0.1, 0);
 			break;
 		default:

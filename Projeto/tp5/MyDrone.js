@@ -10,7 +10,6 @@ function MyDrone(scene) {
 	this.x=7.25;
 	this.y=4;
 	this.z=7;
-	this.initBuffers();
 	this.helice = new MyHelice(this.scene,25);
 	this.helices = new MyHelices(this.scene,25);
 	this.heliceSlow = 0;
@@ -20,7 +19,7 @@ function MyDrone(scene) {
 	this.x_rot = 0;
 	this.y_rot = 1;
 	this.z_rot = 0;
-	this.rot_ang = 30;
+	this.rot_ang = 210;
 	
 };
 
@@ -57,7 +56,7 @@ MyDrone.prototype.move = function(x,y,z){
 
 MyDrone.prototype.rotate = function(speed){
 	this.scene.rotate(speed * degToRad , this.x_rot,this.y_rot,this.z_rot);
-	this.rot_ang += speed *10* degToRad;
+	this.rot_ang += speed *2* degToRad;
 }
 
 MyDrone.prototype.update = function(currTime){
