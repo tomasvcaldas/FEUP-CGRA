@@ -12,9 +12,14 @@ function MyDrone(scene) {
 	this.z=7;
 	this.helice = new MyHelice(this.scene,25);
 	this.helices = new MyHelices(this.scene,25);
+	this.helicefront = new MyHelice(this.scene, 25);
+	this.heliceback = new MyHelice(this.scene,25);
+	this.heliceleft = new MyHelice(this.scene,25);
+	this.heliceright = new MyHelice(this.scene,25);
 	this.heliceSlow = 0;
 	this.heliceNormal = 0;
 	this.heliceFast = 0;
+
 
 	this.x_rot = 0;
 	this.y_rot = 1;
@@ -282,14 +287,14 @@ MyDrone.prototype.display = function()
 		this.helices.display();
 	this.scene.popMatrix();
 
-	//base 3 helices
+	//base 3 helices helice da frente
 	this.scene.pushMatrix();
 		this.scene.translate(0,2.27,1.35)
 		this.scene.rotate(-this.heliceSlow,0,1,0);
 		this.helices.display();
 	this.scene.popMatrix();
 
-	//base 4 helices
+	//base 4 helices helice de tras
 	this.scene.pushMatrix();
 		this.scene.translate(0,2.27,-1.35)
 		this.scene.rotate(-this.heliceSlow,0,1,0);
